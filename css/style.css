@@ -1,0 +1,210 @@
+/** @Author: Sudeshna Pandey //*/
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    max-height: 100vh;
+}
+
+h4{
+  color: red;
+}
+/**** INFO SECTION ****/
+
+.info-section{
+    margin: 50px;
+    padding: 50px;
+    text-align: center;
+}
+
+/**** MAIN SECTION ****/
+
+.main-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px;
+}
+
+/***** INFO AND TOGGLE BUTTON *****/
+
+.button-section {
+    width: 25%;
+    height: 50vh;
+    padding: 50px;
+    border: 1px solid greenyellow;
+    border-right: white;
+}
+
+.btn-holder {
+    width: 280px;
+    height: 150px;
+    box-shadow: 5px 5px 5px 5px #e7e2e2;
+    border-radius: 10px;
+    margin: 30% 25% 0% 10%;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* .btn-switch-wrapper{
+    padding: 50px;
+} */
+
+.btn-switch{
+    display: inline-block;
+    position: relative;
+    margin-top: 10px;
+    height: 26px;
+    width: 60px;
+}
+
+.btn-switch input{
+    display: none;
+}
+
+.slider{
+    background-color: rgb(180, 194, 206);
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: 0.9s;
+}
+
+.slider:before{
+    background-color: #4BB543;
+    content: "on";
+    height: 26px;
+    position: absolute;
+    transition: 0.9s;
+    width: 26px;
+}
+
+.slider.round{
+    border-radius: 80px;
+}
+
+.slider.round::before {
+    border-radius: 50%;
+}
+
+input:checked + .slider:before{
+    transform: translateX(35px);
+    content: "off";
+    background-color: #FC100D;
+}
+
+/***** ANIMATION SECTION *****/
+
+.animation-section{
+    width: 25%;
+    height: 50vh;
+    padding: 50px;
+    border: 1px solid greenyellow;
+    margin: 2px;
+}
+
+/* outline for 8 path section */
+.all-holder{
+    width: 280px;
+    height: 150px;
+    transform: rotate(90deg);
+    margin: 30% 25% 0% 10%;
+}
+
+/* setting a 8 path to run animation - first half */
+.all-holder .paths{
+    width: 150px;
+    height: 150px;
+    border: 10px solid #bbb;
+    border-radius: 50%;
+    position: absolute;
+}
+
+/* setting a 8 path to run animation - 2nd half */
+.all-holder .down-path{
+    transform: translateX(100%);
+    left: -10px;
+}
+
+/* animation element holder */
+.semi-circle-holder > div{
+    position: absolute;
+    clip: rect(0, 150px, 75px, 0);
+} 
+
+/* for the first starting section */
+.ani-ball {
+    width: 150px;
+    height: 150px;
+    border: 10px;
+    border-style: solid;
+    border-color: transparent transparent transparent #A44849;
+    border-radius: 50%;
+}
+
+/* for the first moving section */
+.ani-element {
+    width: 150px;
+    height: 150px;
+    border: 10px;
+    border-style: solid;
+    border-color: #A44849 transparent transparent transparent;
+    border-radius: 50%;
+    transform: rotate(135deg);
+    animation: rotate 3s linear infinite;
+}
+
+/* for the animation */
+@keyframes rotate{
+    50%, 100% {
+        transform: rotate(calc(360deg + 135deg));
+    }
+}
+
+/* for the second half i.e 2nd section */
+.semi-circle-holder .bottomRight-semicircle{
+    transform: translateX(100%) scale(1, -1);
+    left: -10px;
+}
+
+.semi-circle-holder .bottomRight-semicircle > div {
+    animation-delay: .75s;
+}
+
+/* for the second last half i.e 3rd section */
+.semi-circle-holder .topRight-semicircle {
+    transform: translateX(100%) scale(-1, 1);
+    left: -10px;
+}
+
+.semi-circle-holder .topRight-semicircle > div {
+    animation-delay: 1.5s;
+}
+
+/* for the last half i.e 4th section */
+.semi-circle-holder .bottomLeft-semicircle {
+    transform: scale(-1);
+}
+
+.semi-circle-holder .bottomLeft-semicircle > div {
+    animation-delay: 2.25s;
+}
+
+/***** FOOTER SECTION *****/
+.footer{
+    text-align: center;
+}
+
+/**** End of file ****/
+
+/** @Author: Sudeshna Pandey //
+// Reference: Internet, Youtube Videos, Google **/
